@@ -12,7 +12,7 @@ int main(){
             if(i%2 && j < m -1)
             cout<<".";
             if((i%2) && j == m-1 && i%4 == 1)
-            cout<<"*";
+            cout<<"#";
         }
         cout<<endl;
     }
