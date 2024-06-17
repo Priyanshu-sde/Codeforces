@@ -1,15 +1,28 @@
-#include<iostream>
-#include<vector>
+#include <bits/stdc++.h>
 using namespace std;
-int main()
-{
+
+#define fr(i,n) for(int  i = 0;i < n;i++)
+#define sr(a) sort(a.begin(),a.end())
+#define srd(a) sort(a.begin(),a.end(),greater<int>())
+#define ll long long
+#define all(x) x.begin(), x.end()
+int N = 10e7;
+int main(){
     int t;
     cin>>t;
     while(t--){
-        int x,n;
-        cin>>x>>n;
-        vector<int> vec;
-        for(int )
+        int n,x;
+        cin>>n>>x;
+        vector<int> ar(n+1);
+        int a = 1,b;
+        fr(i,n){
+            cin>>b;
+            ar[i] = b-a;
+            a = b;
+        }
+        ar[n] = 2*(x-a);
+        cout<<*max_element(all(ar))<<endl;
+
     }
- return 0;
+    return 0;
 }
