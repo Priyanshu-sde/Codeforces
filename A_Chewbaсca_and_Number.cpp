@@ -11,7 +11,7 @@ int main(){
         cin>>s;
         for(int i = 0;i < s.length();i++){
             if(s[i] > 53)
-            s[i] = 49 + (9-(s[i]-49));
+            s[i] =(9-(s[i]));
         }
     
     cout<<s<<endl;

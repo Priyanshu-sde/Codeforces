@@ -14,7 +14,7 @@ int main(){
         int n,x;
         cin>>n>>x;
         vector<int> ar(n+1);
-        int a = 1,b;
+        int a = 0,b;
         fr(i,n){
             cin>>b;
             ar[i] = b-a;
