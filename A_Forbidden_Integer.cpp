@@ -25,8 +25,8 @@ int main(){
         }
         else{
             cout<<"YES"<<endl;
-            cout<<x<<endl;
-            while(x--){
+            cout<<n<<endl;
+            while(n--){
                 cout<<"1 ";
             }
             cout<<endl;

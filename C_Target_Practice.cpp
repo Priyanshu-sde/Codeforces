@@ -4,15 +4,25 @@ int main(){
     int t;
     cin>>t;
     while(t--){
-        vector <vector<int>> arr;
+        char ar;
+        int sum =  0;
+        int ri,rj;
         for(int  i = 0;i < 10;i++){
             for(int j = 0; j < 10;j++){
-                cin>>arr[i][j];
-                if(arr[i][j] == 'X'){
-                    i
+                cin>>ar;
+                if(ar == 'X'){
+                    i > 4?ri = 9-i:ri= i;
+                    j > 4?rj = 9-j:rj= j;
+                    if(rj > ri){
+                        sum += ri +1;
+                    }
+                    else{
+                        sum += rj + 1;
+                    }
                 }
             }
         }
+        cout<<sum<<endl;
 
     }
 }
