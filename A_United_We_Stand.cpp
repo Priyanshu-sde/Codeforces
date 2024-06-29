@@ -14,31 +14,32 @@ int main(){
         int n;
         cin>>n;
         vector<ll> a(n);
-        fr(i,n) cin>>a[i];
-        vector<ll> b;
-        vector<ll> c;        
+        fr(i,n) cin>>a[i];   
         
-        int min = INT_MAX;
+        int ma = 0;
         fr(i,n){
-            if(a[i] != 1&& a[i] < min)
-            min = a[i];
+            if(a[i] > ma)
+            ma = a[i];
         }
-        fr(i,n){
-            if(a[i]%min == 0){
-                c.push_back(a[i]);
+        int cnt = 0,cnt1 = 0;
+        for(int i = n-1;i >= 0;i--){
+            if(ma == a[i]){
+                cnt++;
             }
-            else{
-                b.push_back(a[i]);
-            }
-        }
-        if(c.size() == 0|| b.size()==0){
+            if(a[i] == 1){
+                cnt1++;}
+
+        }       
+        if(cnt == n){
             cout<<-1<<endl;
         }
+        
         else{
-            cout<<b.size()<<" "<<c.size()<<endl;
-            fr(i,b.size()) cout<<b[i]<<" ";
+            cout<<cnt+cnt1<<" "<<n-cnt-cnt1<<endl;
+            fr(i,cnt) cout<<ma<<" ";
+            fr(i,cnt1) cout<<1<<" ";
             cout<<endl;
-            fr(i,c.size()) cout<<c[i]<<" "; 
+            fr(i,n) if(!(a[i] == ma || a[i] == 1))cout<<a[i]<<" ";
             cout<<endl;           
         }
     }
