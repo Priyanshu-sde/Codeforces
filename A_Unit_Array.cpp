@@ -22,10 +22,25 @@ int main(){
             else
             m++;
         }
-        if(m > o)
-        cout<<(abs(m-o)+1)/2+abs(m-o)%2<<endl;
-        else 
-        cout<<0<<endl;
+        if(m > o){
+        int ans = (max(0,m-o)+1)/2;
+        m -= ans;
+        o += ans;
+        if(m%2){
+            cout<<ans+1<<endl;
+        }
+        else{
+            cout<<ans<<endl;
+        }
+        }
+        else{
+            if(m%2){
+            cout<<1<<endl;
+        }
+        else{
+            cout<<0<<endl;
+        }
+        }
     }
     return 0;
 }
