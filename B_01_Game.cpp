@@ -12,11 +12,18 @@ int main(){
     int tc = 1;
     cin>>tc;
     while(tc--){
-        int n;
-        cin>>n;
-        vector<int> a(n);
+        string s;
+        cin>>s;
+        int n = s.length();
+        int cnt = 0;
         for(int i = 0 ;i < n;i++){
-            cin>>a[i];
+            if(s[i] == '1')
+            cnt++;
         }
+        if(abs(n - cnt)%2 == 0)
+        cout<<"NET"<<endl;
+        else
+        cout<<"DA"<<endl;
+        
     }
 }

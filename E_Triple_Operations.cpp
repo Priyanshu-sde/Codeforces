@@ -9,9 +9,9 @@ using namespace std;
 int main(){
     int tc;
     cin>>tc;
-    while(tc-   -){
+    while(tc--){
         int l,r;
-        cin>>l>>r;
+        cin>>   r;
         ll cnt = 0LL;
         int a = l;
         while(a > 0){

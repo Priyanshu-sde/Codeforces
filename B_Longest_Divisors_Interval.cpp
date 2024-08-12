@@ -12,11 +12,13 @@ int main(){
     int tc = 1;
     cin>>tc;
     while(tc--){
-        int n;
+        ll n;
         cin>>n;
-        vector<int> a(n);
-        for(int i = 0 ;i < n;i++){
-            cin>>a[i];
+        if(n%2){
+            cout<<1<<endl;
+        }
+        else{
+            
         }
     }
 }

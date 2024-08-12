@@ -12,11 +12,15 @@ int main(){
     int tc = 1;
     cin>>tc;
     while(tc--){
-        int n;
-        cin>>n;
-        vector<int> a(n);
-        for(int i = 0 ;i < n;i++){
-            cin>>a[i];
+        ll n,k,x;
+        cin>>n>>k>>x;
+        ll a = n*(n+1)/2;
+        ll b = (n-k)*(n-k+1)/2;
+        if(a-b >= x && k*(k+1)/2 <= x){
+            cout<<"YES"<<endl;
+        }
+        else{
+            cout<<"NO" <<endl;
         }
     }
 }

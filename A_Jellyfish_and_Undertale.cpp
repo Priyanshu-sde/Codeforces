@@ -12,11 +12,20 @@ int main(){
     int tc = 1;
     cin>>tc;
     while(tc--){
-        int n;
-        cin>>n;
-        vector<int> a(n);
+        int a,b,n,d;
+        cin>>a>>b>>n;
+        ll sum = b;
         for(int i = 0 ;i < n;i++){
-            cin>>a[i];
+            cin>>d;
+            if(d >= a){
+                sum+=a-1;
+            }
+            else{
+                sum+=d;
+            }
         }
+        cout<<sum<<endl;
+
+
     }
 }
