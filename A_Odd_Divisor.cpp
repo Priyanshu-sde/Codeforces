@@ -12,18 +12,20 @@ int main(){
     int tc = 1;
     cin>>tc;
     while(tc--){
-        string s;
-        cin>>s;
-        int n = s.length();
-        int cnt = 0;
-        for(int i = 0 ;i < n;i++){
-            if(s[i] == '1')
-            cnt++;
+        ll n;
+        cin>>n;
+        ll ans = 0,div;
+        while(1){
+            if(n%2 == 0)
+            n /= 2;
+            else
+            break;
         }
-        if(min(abs(n - cnt),cnt)%2 == 0)
-        cout<<"NET"<<endl;
-        else
-        cout<<"DA"<<endl;
-        
+        if(n == 1){
+            cout<<"NO"<<endl;
+        }
+        else{
+            cout<<"YES"<<endl;
+        }
     }
 }

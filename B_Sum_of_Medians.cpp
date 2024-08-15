@@ -12,18 +12,21 @@ int main(){
     int tc = 1;
     cin>>tc;
     while(tc--){
-        string s;
-        cin>>s;
-        int n = s.length();
-        int cnt = 0;
+        int a,k;
+        cin>>a>>k;
+        int n = a*k;
+        vector<int> a(n);
         for(int i = 0 ;i < n;i++){
-            if(s[i] == '1')
-            cnt++;
+            cin>>a[i];
         }
-        if(min(abs(n - cnt),cnt)%2 == 0)
-        cout<<"NET"<<endl;
-        else
-        cout<<"DA"<<endl;
-        
+        ll sum = 0;
+        for(int i = 0; i < n;i+=k){
+            ll ma = 0;
+            for(int j = i;j < i+k;j++){
+                ma = max(ma,a[j]);
+            }
+            sum += ma;
+        }
+        cout<<sum<<endl;
     }
 }

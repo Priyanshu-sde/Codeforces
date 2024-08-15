@@ -12,18 +12,21 @@ int main(){
     int tc = 1;
     cin>>tc;
     while(tc--){
-        string s;
-        cin>>s;
-        int n = s.length();
-        int cnt = 0;
+        int n,x;
+        cin>>n>>x;
+        ll a, sum = 0,maxsum = 0,minsum = 0;
         for(int i = 0 ;i < n;i++){
-            if(s[i] == '1')
-            cnt++;
+            cin>>a;
+            sum += a;
+            maxsum += (a/x);
+            if(a%x != 0)
+            maxsum++;
         }
-        if(min(abs(n - cnt),cnt)%2 == 0)
-        cout<<"NET"<<endl;
-        else
-        cout<<"DA"<<endl;
+        minsum = (sum/x);
+        if(sum % x != 0)
+        minsum++;
+        cout<<minsum<<" "<<maxsum<<endl;
         
+
     }
 }
