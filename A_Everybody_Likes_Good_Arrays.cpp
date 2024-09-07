@@ -12,15 +12,23 @@ int main(){
     int t = 1;
     cin>>t;
     while(t--){
-        int n;
+        int n,cnt = 0;
         cin>>n;
-        int cnt = -1;
-        int a = n;
-        while(n > 0){
-            cnt++;
-            n /= 10;
+        int a;
+        cin>>a;
+        int p = a%2;
+        n--;
+        while(n--){
+            cin>>a;
+            if(p==a%2){
+                cnt++;
+            }
+            else{
+                p = a%2;
+            }
         }
-        cout<<(int)(cnt*9 + a/pow(10,cnt))<<endl;
+        cout<<cnt<<endl;
+        
     }
     return 0;
 }

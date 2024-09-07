@@ -12,15 +12,19 @@ int main(){
     int t = 1;
     cin>>t;
     while(t--){
-        int n;
+        int n,cnt = 0;
         cin>>n;
-        int cnt = -1;
-        int a = n;
-        while(n > 0){
-            cnt++;
-            n /= 10;
+        string s;
+        cin>>s;
+        for(int i = 0 ; i < n/2 ; i++ ){
+            if(s[i] != s[n-1-i]){
+                cnt++;
+            }
+            else{
+                break;
+            }
         }
-        cout<<(int)(cnt*9 + a/pow(10,cnt))<<endl;
+        cout<<n-2*cnt<<endl;
     }
     return 0;
 }

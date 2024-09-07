@@ -13,14 +13,21 @@ int main(){
     cin>>t;
     while(t--){
         int n;
+        char a;
         cin>>n;
-        int cnt = -1;
-        int a = n;
-        while(n > 0){
-            cnt++;
-            n /= 10;
+        int an[n];
+        fr(i,n){
+            for(int j = 1;  j <= 4;j++){
+                cin>>a;
+                if(a=='#'){
+                    an[i]=j;
+                }
+            }
         }
-        cout<<(int)(cnt*9 + a/pow(10,cnt))<<endl;
+        for(int i = n-1;i >= 0;i--){
+            cout<<an[i]<<" ";
+        }
+        cout<<endl;
     }
     return 0;
 }

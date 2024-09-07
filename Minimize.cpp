@@ -12,15 +12,9 @@ int main(){
     int t = 1;
     cin>>t;
     while(t--){
-        int n;
-        cin>>n;
-        int cnt = -1;
-        int a = n;
-        while(n > 0){
-            cnt++;
-            n /= 10;
-        }
-        cout<<(int)(cnt*9 + a/pow(10,cnt))<<endl;
+        int a,b;
+        cin>>a>>b;
+        cout<<abs(a-b)<<endl;
     }
     return 0;
 }

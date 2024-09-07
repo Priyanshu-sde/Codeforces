@@ -12,15 +12,16 @@ int main(){
     int t = 1;
     cin>>t;
     while(t--){
-        int n;
+        int n,fl = 1;
         cin>>n;
-        int cnt = -1;
-        int a = n;
-        while(n > 0){
-            cnt++;
-            n /= 10;
-        }
-        cout<<(int)(cnt*9 + a/pow(10,cnt))<<endl;
+        vector<ll> a(n);
+        fr(i,n) cin>>a[i];
+        find(all(a),5)
+        arr[0].size()
+        if(fl)
+        cout<<"NO"<<endl;
+        else
+        cout<<"YES"<<endl;
     }
     return 0;
 }

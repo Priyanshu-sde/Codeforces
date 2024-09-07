@@ -12,15 +12,21 @@ int main(){
     int t = 1;
     cin>>t;
     while(t--){
-        int n;
-        cin>>n;
-        int cnt = -1;
-        int a = n;
-        while(n > 0){
-            cnt++;
-            n /= 10;
+	    int n,k;
+	    cin>>n>>k;
+        vector<ll> a(n);
+        fr(i,n) cin>>a[i];
+        ll sum = 0;
+        fr(i,k){
+            sum+=a[i];
         }
-        cout<<(int)(cnt*9 + a/pow(10,cnt))<<endl;
+        a[n-1] += sum;
+        for(int i = k;i < n;i++){
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+	    
+	
     }
     return 0;
 }

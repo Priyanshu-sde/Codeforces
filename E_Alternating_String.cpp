@@ -14,13 +14,9 @@ int main(){
     while(t--){
         int n;
         cin>>n;
-        int cnt = -1;
-        int a = n;
-        while(n > 0){
-            cnt++;
-            n /= 10;
-        }
-        cout<<(int)(cnt*9 + a/pow(10,cnt))<<endl;
+        string s;
+        cin>>s;
+        
     }
     return 0;
 }
