@@ -14,14 +14,27 @@ int main(){
         int n,k,x;
         cin>>n>>k>>x;
         if(x==1){
-            if((k==2  && n%2 == 1) || k ==1){
+            if((k==2  && n%2 == 1) || k == 1 || n == 1){
                 cout<<"NO"<<endl;
             }
             else{
                 cout<<"YES"<<endl;
-                cout<<x<<endl;                
+                if(n%2) {
+                    cout<<n/2+1<<endl;
+                    for(int i = 0 ; i < n/2;i++){
+                        cout<<"2 ";
+                    }
+                    cout<<"1 "<<endl;
+                }     
+                else{
+                    cout<<n/2<<endl;
+                    for(int i = 0 ; i < n/2;i++){
+                        cout<<"2 ";
+                    }
+                    cout<<endl;
+                }          
             }
-        continue;
+        
         }
         else{
             cout<<"YES"<<endl;

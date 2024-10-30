@@ -7,40 +7,36 @@ using namespace std;
 #define ll long long
 int N = 10e7;
 #define all(a) a.begin(),a.end()
+
 int main(){
-    int t;
+    int t = 1;
     cin>>t;
     while(t--){
         int n;
         cin>>n;
         vector<ll> a(n);
-        fr(i,n) cin>>a[i];   
-        
-        int ma = 0;
-        fr(i,n){
-            if(a[i] > ma)
-            ma = a[i];
+        vector<ll> b;
+        vector<ll> c;
+        fr(i,n) cin>>a[i];
+        int ma = *max_element(all(a));
+        for(int i = 0; i< n;i++){
+            if(a[i] == ma) c.push_back(a[i]);
+            else b.push_back(a[i]);
         }
-        int cnt = 0,cnt1 = 0;
-        for(int i = n-1;i >= 0;i--){
-            if(ma == a[i]){
-                cnt++;
-            }
-            if(a[i] == 1){
-                cnt1++;}
-
-        }       
-        if(cnt == n){
+        if(b.size() == 0) {
             cout<<-1<<endl;
+            continue;
         }
-        
         else{
-            cout<<cnt+cnt1<<" "<<n-cnt-cnt1<<endl;
-            fr(i,cnt) cout<<ma<<" ";
-            fr(i,cnt1) cout<<1<<" ";
+            cout<<b.size()<<" "<<c.size()<<endl;
+            for(int i = 0; i < b.size();i++){
+                cout<<b[i]<<" ";
+            }
             cout<<endl;
-            fr(i,n) if(!(a[i] == ma || a[i] == 1))cout<<a[i]<<" ";
-            cout<<endl;           
+            for(int i = 0; i < c.size(); i++){
+                cout<<c[i]<<" ";
+            }
+            cout<<endl;
         }
     }
     return 0;

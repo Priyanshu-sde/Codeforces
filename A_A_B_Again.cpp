@@ -10,9 +10,8 @@ int main(){
     int tc;
     cin>>tc;
     while(tc--){
-        int n;
-        cin>>n;
-        cout<<n/10 + n%10<<endl;
+        int n = -3;
+        cout<<floor(n/2)<<endl;
     }
 
 }
