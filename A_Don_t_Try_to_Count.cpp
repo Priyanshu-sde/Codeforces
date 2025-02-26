@@ -1,48 +1,43 @@
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-int main()
-{
-    int t;
+
+#define fr(i,n) for(int  i = 0;i < n;i++)
+#define sr(a) sort(a.begin(),a.end())
+#define srd(a) sort(a.begin(),a.end(),greater<int>())
+#define ll long long
+int N = 10e7;
+#define all(a) a.begin(),a.end()
+
+int main(){
+    int t = 1;
     cin>>t;
     while(t--){
-        int sn,sm;
-        cin>>sn>>sm;
-        string n,m;
-        cin>>n;
-        cin>>m;
-        int ans = 0 ,fl =0;
-        
-        while(fl != 1 && ans  < 26){
-            if(m<n){
-                fl = 1;
-                break;
-            }
-            for(int i = 0;i<sn;i++){
-                int j;
-                for(j = i;j<sm + i && j < sn;j++){
-                    if(n[j] != m[j-i]){
-                        break;
-                    }
+        int n,m;
+        cin>>n>>m;
+        string x,s;
+        cin>>x>>s;
+        int j = 0,fl = 0,ans = -1;
+        for(int i = 0;i < n;i++){
+            if(s[j] == x[i]){
+                j++;
+                if(j == m){
+                    ans = fl;
+                    break;
                 }
-                if(j==sm){
-                fl = 1;
-                break;
+                else if(i == n-1){
+                    i = 0;
+                    fl++;
                 }
             }
-            sn *= 2;
-            n += n;
-            ans++;
+            else{
+                if(fl > 0 || i == n-1) {
+                    ans = -1;
+                    break;
+                }
+                j = 0;
+            }
         }
-        if(fl)
         cout<<ans<<endl;
-        else
-        cout<<-1<<endl;
-
-        
-
-    }  
-        
-
-    
- return 0;
+    }
+    return 0;
 }
