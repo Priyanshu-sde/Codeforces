@@ -20,11 +20,11 @@ int main(){
             else{
                 cout<<"YES"<<endl;
                 if(n%2) {
-                    cout<<n/2+1<<endl;
-                    for(int i = 0 ; i < n/2;i++){
+                    cout<<n/2<<endl;
+                    for(int i = 0 ; i < n/2 -1;i++){
                         cout<<"2 ";
                     }
-                    cout<<"1 "<<endl;
+                    cout<<"3 "<<endl;
                 }     
                 else{
                     cout<<n/2<<endl;
