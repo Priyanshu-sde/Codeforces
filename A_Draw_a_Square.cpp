@@ -12,19 +12,21 @@ int main(){
     int t = 1;
     cin>>t;
     while(t--){
-        string s;
-        cin>>s;
-        for(int i = s.length() -1 ; i >= 0;i--){
-            if(fl == 0){
-
-            }
-            else if(fl == 5){
-
-            }
-            else{
-                if(s[i] == 5)
-            }
+        int m;
+        cin>>m;
+        int n = m;
+        int fl = -1;
+        if(n < 5){
+            cout<<-1<<endl;
+            continue;
         }
+        if(n&1) n--;
+        while((n&1) == 0){
+            fl++;
+            n /= 2;
+        }
+        cout<<m-(1<<fl)<<endl;
+
     }
     return 0;
 }
