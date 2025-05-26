@@ -17,11 +17,15 @@ int main(){
         string s;
         cin>>s;
         map<char,int> mp;
-        for(int i =0;i  < n;i++){
+        for(int i = 0;i  < n;i++){
             mp[s[i]]++;
         }
-        if((n-k)%2 == 1){
-            
+        int cnt = 0;
+        for(auto it:mp){
+            if(it.second&1) cnt++;
         }
+        if(cnt > k +1) cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
     }
+
 }
