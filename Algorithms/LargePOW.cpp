@@ -12,6 +12,8 @@ long long binpow(long long a,long long b){
     return res;
 }
 
+
+
 int main(){
     long long a,b;
     cin>>a>>b;
