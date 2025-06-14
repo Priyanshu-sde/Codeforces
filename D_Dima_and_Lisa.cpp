@@ -23,8 +23,13 @@ void getprime(){
 
 
 int main(){
+    getprime();
     ll n;
     cin>>n;
-    
+    while(n != 0){
+        for(int i = n;i >= 0;i--){
+            if(isprime)
+        }
+    }
     return 0;
 }

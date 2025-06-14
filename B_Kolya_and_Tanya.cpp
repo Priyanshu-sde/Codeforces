@@ -8,12 +8,21 @@ using namespace std;
 const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
+# define MOD 1000000007
+
+ll binpow(ll b,ll e){
+    ll res = 1;
+    while(e > 0){
+        if(e&1) res = (res*b)%MOD;
+        b = (b*b)%MOD;
+        e >>= 1;
+    }
+    return res;
+}
+
 int main(){
-    ll n,m;
-    cin>>n>>m;
-    ll mi = m*((n/m - 1)*(n/m))/2 + (n%m)*(n/m);
-    ll ma = ((n - m)*(n - m + 1))/2;
-    cout<<mi<<" "<<ma<<"\n";
-    
+    ll n;
+    cin>>n;
+    cout<<(binpow(27,n) - binpow(7,n) + MOD)%MOD<<"\n";
     return 0;
 }

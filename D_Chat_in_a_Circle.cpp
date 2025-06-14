@@ -9,11 +9,16 @@ const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
-    ll n,m;
-    cin>>n>>m;
-    ll mi = m*((n/m - 1)*(n/m))/2 + (n%m)*(n/m);
-    ll ma = ((n - m)*(n - m + 1))/2;
-    cout<<mi<<" "<<ma<<"\n";
-    
+    ll n;
+    cin>>n;
+    ll a[n];
+    fr(i,n) cin>>a[i];
+    sort(a,a+n,greater<int>());
+    ll com = a[0];
+    for(int i =1;i <= (n-1)/2;i++){
+        com += a[i];
+        if(i != (n)/2) com += a[i];
+    }
+    cout<<com<<endl;
     return 0;
 }

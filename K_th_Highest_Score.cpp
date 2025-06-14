@@ -9,11 +9,12 @@ const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
-    ll n,m;
-    cin>>n>>m;
-    ll mi = m*((n/m - 1)*(n/m))/2 + (n%m)*(n/m);
-    ll ma = ((n - m)*(n - m + 1))/2;
-    cout<<mi<<" "<<ma<<"\n";
-    
+    int n,k;
+    cin>>n>>k;
+    while(1){
+        cout<<"F "<<i<<endl;
+        cin>>s;
+        if(s)
+    }
     return 0;
 }

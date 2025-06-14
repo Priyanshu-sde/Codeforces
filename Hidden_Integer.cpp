@@ -9,11 +9,16 @@ const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
-    ll n,m;
-    cin>>n>>m;
-    ll mi = m*((n/m - 1)*(n/m))/2 + (n%m)*(n/m);
-    ll ma = ((n - m)*(n - m + 1))/2;
-    cout<<mi<<" "<<ma<<"\n";
-    
+    ll s = 0,e = 1000;
+    string str;
+    while(e > s){
+        ll mid = (s+e)/2;
+        cout<<"?"<<mid<<endl;
+        cin>>str;
+        if(str == "N") e = mid - 1;
+        else s = mid + 1;
+    }
+    cout<<"!"<<(s+e)/2<<endl;
+
     return 0;
 }

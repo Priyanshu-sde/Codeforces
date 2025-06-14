@@ -9,11 +9,16 @@ const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
-    ll n,m;
-    cin>>n>>m;
-    ll mi = m*((n/m - 1)*(n/m))/2 + (n%m)*(n/m);
-    ll ma = ((n - m)*(n - m + 1))/2;
-    cout<<mi<<" "<<ma<<"\n";
-    
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    int ans  = 0;
+    for(int i =1;i< n;i++){
+        if(s[i-1] == s[i]){
+            ans++;
+        }
+    }
+    cout<<ans<<endl;
     return 0;
 }

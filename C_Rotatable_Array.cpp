@@ -9,11 +9,14 @@ const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
-    ll n,m;
-    cin>>n>>m;
-    ll mi = m*((n/m - 1)*(n/m))/2 + (n%m)*(n/m);
-    ll ma = ((n - m)*(n - m + 1))/2;
-    cout<<mi<<" "<<ma<<"\n";
+    int n,q;
+    cin>>n>>q;
+    ll a[n];
+    fr(i,n) {
+        a[i] = i+1;
+    }
+    
+
     
     return 0;
 }

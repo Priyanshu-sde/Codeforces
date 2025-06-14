@@ -13,6 +13,16 @@ long long binpow(long long a,long long b){
 }
 
 
+//for mod of power calculation
+ll binpow1(ll b, ll e){
+    ll ans = 1;
+    while(e > 0){
+        if(e&1) ans = (ans*b) %  (MOD-1);
+        b = (b*b)%(MOD-1);
+        e >>= 1;
+    }
+    return ans;
+}
 
 int main(){
     long long a,b;

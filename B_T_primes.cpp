@@ -5,7 +5,7 @@ using namespace std;
 #define sr(a) sort(a.begin(),a.end())
 #define srd(a) sort(a.begin(),a.end(),greater<int>())
 #define ll long long
-int N = 10e6;
+const int N = 1e6 ;
 #define all(a) a.begin(),a.end()
 
 vector<int> spf(N+1,0);
@@ -15,7 +15,7 @@ void gen_spf(){
     for(int i = 2;i <= N;i++){
         if(spf[i] == 0){
             spf[i] = i;
-            for(int j = i*i;j <= N;j += i){
+            for(int j = i;j <= N;j += i){
                 if(spf[j] == 0){
                     spf[j] = i;
                 }
@@ -33,16 +33,11 @@ int main(){
     while(t--){
         int n;
         cin>>n;
-        ll a,pf;
+        ll a;
         fr(i,n){
             cin>>a;
-            pf = 1;
-            while(a != 1){
-                a /= spf[a];
-                pf++;
-                if(pf > 3) break;
-            }
-            if(pf == 3) cout<<"YES"<<endl;
+            ll b = sqrt(a);            
+            if(b*b == a && spf[b] == b && a > 3) cout<<"YES"<<endl;
             else cout<<"NO"<<endl; 
 
         }

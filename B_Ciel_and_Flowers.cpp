@@ -9,11 +9,14 @@ const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
-    ll n,m;
-    cin>>n>>m;
-    ll mi = m*((n/m - 1)*(n/m))/2 + (n%m)*(n/m);
-    ll ma = ((n - m)*(n - m + 1))/2;
-    cout<<mi<<" "<<ma<<"\n";
-    
+    ll r,g,b;
+    cin>>r>>g>>b;
+    if(min(r%3,min(g%3,b%3)) == 0 && (r%3 +b%3 +g%3) == 4 && min(r,min(g,b)) != 0){
+        cout<<(r/3 + g/3 + b/3 +min(r%3,min(g%3,b%3))) + 1<<endl;
+
+    }
+    else
+    cout<<(r/3 + g/3 + b/3 +min(r%3,min(g%3,b%3)))<<endl;
+
     return 0;
 }
