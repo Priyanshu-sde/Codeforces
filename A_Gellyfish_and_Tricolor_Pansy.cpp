@@ -9,30 +9,20 @@ const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
-    int n,q;
-    cin>>n>>q;
-    ll a[n];
-    fr(i,n) {
-        a[i] = i+1;
-    }
-    int qn,p,x,k;
-
-    while(q--){
-        cin>>qn;
-        if(qn == 1){
-            cin>>p>>x;
-            a[p] = x;
+ios_base::sync_with_stdio(0);
+cin.tie(0);
+cout.tie(0);
+    int t = 1;
+    cin>>t;
+    while(t--){
+        int a,b,c,d;
+        cin>>a>>b>>c>>d;
+        if(a < b && (a  < min(c,d))){
+            cout<<"Gellyfish"<<endl;
         }
-        else if(qn == 2){
-            cin>>p;
-            cout<<a[p]" ";
-        }
-        else{
+        else if(a >= b && (b  <= min(c,d))){
             
         }
     }
-
-
-    
     return 0;
 }

@@ -27,7 +27,11 @@
         "ranges": "cpp",
         "span": "cpp",
         "stacktrace": "cpp",
-        "text_encoding": "cpp"
+        "text_encoding": "cpp",
+        "istream": "cpp",
+        "barrier": "cpp",
+        "latch": "cpp",
+        "semaphore": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
