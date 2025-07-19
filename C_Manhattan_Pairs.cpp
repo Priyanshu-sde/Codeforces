@@ -8,15 +8,12 @@ using namespace std;
 const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
-bool cmp (pair<int,pair<int,int>> a,pair<int,pair<int,int>> b){
-    int x = abs(a.second.first - b.second.first);
-    int y = abs(a.second.second - b.second.second);
-    if(x > y){
-        return a.second.first < b.second.first;
-    }
-    return a.second.second < b.second.second;
-    
+bool cmp(pair<int, pair<int, int>> a, pair<int, pair<int, int>> b) {
+    int valA = a.second.first - a.second.second;
+    int valB = b.second.first - b.second.second;
+    return valA < valB;
 }
+
 
 int main(){
     ios_base::sync_with_stdio(0);
