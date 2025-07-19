@@ -11,28 +11,28 @@ const int N = 1e7;
 const int MOD = 998244353;
 
 
-int dp[500][2][500];
+int dp[501][2][501];
 int n,k;
 
 long long rec(vector<vector<int>> &a,int x,int y,int v){
-    if(dp[x][y][v]!=1) return dp[x][y][v];
+    if(dp[x][y][v]!=-1) return dp[x][y][v];
 
     if(x == n - 1 && y == 1) return 1;
     long long ans = 0LL;
     if(x < n - 1 && a[x+1][y] == -1) {
-        for(int i = a[x][y]; i <= k;i++){
+        for(int i = v; i <= k;i++){
             ans = (rec(a,x+1,y,i) + ans) % MOD;
         }
     }
     if(y == 0 && a[x][y+1] == -1){
-        for(int i = a[x][y]; i <= k;i++){
+        for(int i = v; i <= k;i++){
             ans = (rec(a,x,y+1,i)  + ans ) % MOD;
         }
     }
-    if(x < n - 1 && a[x+1][y] >= a[x][y]){
+    if(x < n - 1 && a[x+1][y] >= v){
         ans = (rec(a,x+1,y,a[x+1][y]) + ans) % MOD;        
     }
-    if(y == 0 && a[x][y+1] >= a[x][y]){
+    if(y == 0 && a[x][y+1] >= v){
         ans = (rec(a,x,y+1,a[x][y+1]) + ans) % MOD;  
     }
 
