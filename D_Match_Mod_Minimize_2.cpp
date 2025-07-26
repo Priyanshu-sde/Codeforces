@@ -12,22 +12,16 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-    string s,t;
-    cin>>s;
-    bool fl  = false;
-    for(int i = 0;i < s.length();i++){
-        if(s[i] == '#'){
-            t+='#';
-            fl = false;
-        }
-        else if(!fl){
-            t+='o';
-            fl = true;
-        }
-        else {
-            t+='.';
-        }
+    int t;
+    cin>>t;
+    while(t--){
+        int n,m;
+        cin>>n>>m;
+        ll a[n], b[n];
+        fr(i,n)cin>>a[i];
+        fr(i,n)cin>>b[i];
+        sort(a,a+n);
+        
     }
-    cout<<t<<endl;
     return 0;
 }
