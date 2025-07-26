@@ -20,8 +20,26 @@ int main(){
         ll a[n], b[n];
         fr(i,n)cin>>a[i];
         fr(i,n)cin>>b[i];
-        sort(a,a+n);
+        sort(a,a+n,greater<int>());
+        sort(b,b+n);
+        int idx = 0;
+        ll sum = 0;
+        for(int i =0 ;i < n;i++){
+            if(a[i] + b[i] >= m){
+                sum += (a[i] + b[i])%m;
+            }
+            else{
+                idx = i;
+                break;
+            }
+        }
+        sort(a+idx,a+n);
+        for(int i = idx;i < n;i++){
+            sum += (a[i] + b[i])%m;
+        }
+        cout<<sum<<endl;
         
+
     }
     return 0;
 }
