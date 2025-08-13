@@ -14,8 +14,11 @@ int main() {
 	            if(i == j){
 	                cout<<0<<" ";
 	            }
-	            else{
+	            else if(j+i < n){
 	                cout<<i+j<<" ";
+	            }
+	            else{
+	                cout<<(i+j) % n + 1<<" ";
 	            }
 	            
 	        }
