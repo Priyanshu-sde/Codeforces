@@ -10,8 +10,8 @@ const int N = 1e7;
 
 int dp[100001];
 
-int rec(vector<vector<int>> adj,int i){
-    if(dp[i] != 1) return dp[i];
+int rec(vector<vector<int>>& adj,int i){
+    if(dp[i] != -1) return dp[i];
     int res = 0;
     for(auto it : adj[i]){
         res = max(res,rec(adj,it) + 1);
@@ -23,10 +23,10 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-    memset(dp,sizeof(dp),-1); 
+    memset(dp,-1,sizeof(dp)); 
     int n,m,x,y;
     cin>>n>>m;
-    vector<vector<int>> adj(n);
+    vector<vector<int>> adj(n + 1);
     fr(i,m){
         cin>>x>>y;
         adj[x].push_back(y);
@@ -35,7 +35,7 @@ int main(){
     for(int i = 1;i <= n;i++){
         ans = max(ans,rec(adj,i));
     }
-    return ans;
+    cout<< ans << endl;
      
     return 0;
 }
