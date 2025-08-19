@@ -10,18 +10,10 @@ const int N = 1e7;
 vector<pair<int,int>> a(101);
 int n;
 
-map<int,int> dp[101];
+vector<vector<int>> dp[101][1001];
 
-ll rec(int state,int w){
+ll rec(int n,int val){
     
-    if(state == n) return 0;
-    if(dp[state][w] != 0)return dp[state][w];
-    ll taken = 0;
-    if(w-a[state].first >= 0)
-    taken = a[state].second + rec(state+1,w-a[state].first);
-    ll notaken = rec(state+1,w);
-    dp[state][w] = max(taken,notaken);
-    return max(taken,notaken);
 }
 
 
