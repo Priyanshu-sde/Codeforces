@@ -10,6 +10,7 @@ const int N = 1e7;
 
 long long binpow(long long a, long long b)
 {
+    if(b < 0) return 1;
     long long res = 1;
     while (b > 0)
     {
@@ -43,7 +44,7 @@ int main()
         ll nn = n;
         ll ans = 0LL;
         int cnt = 0;
-        vector<int> tri(19,0);
+        vector<ll> tri(19,0LL);
         for (int i = 18; i >= 0; i--)
         {
             while (nn >= pow3[i])
@@ -63,7 +64,11 @@ int main()
             nn = n;
             for (int i = 18; i > 0; i--)
             {
-                ll can = mi
+                ll can = min(tri[i],(k-cnt)/2);
+                if(can <= 0) continue;
+                tri[i] -= can;
+                tri[i-1] += 3LL*can;
+                cnt += 2*can;
                 // while(tri[i] > 0 && k >= cnt + 2){
                 //     tri[i]--;
                 //     tri[i-1] += 3;
