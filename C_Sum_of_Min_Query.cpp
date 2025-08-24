@@ -22,24 +22,25 @@ int main(){
     fr(i,n){
         ans += min(a[i],b[i]);
     }
-
     while(q--){
         char s;
-        int x,v;
+        ll x,v;
         cin>>s>>x>>v;
+        x--;
         if(s == 'A') {
-            int pmin = min(a[x],b[x]);
-            int nmin = min(pmin,v);
-            ans = ans - pmin + nmin;
-            cout<<ans<<endl;
+            int diff = min(a[x],b[x]);
             a[x] = v;
+            diff -= min(a[x],b[x]);  
+            ans -= diff;              
+            cout<<ans<<endl;
         }
         else {
-            int pmin = min(a[x],b[x]);
-            int nmin = min(pmin,v);
-            ans = ans - pmin + nmin;
-            cout<<ans<<endl;
+            int diff = min(a[x],b[x]);
             b[x] = v;
+            diff -= min(a[x],b[x]);  
+            ans -= diff;          
+            cout<<ans<<endl;
+            
         }
         
     }
