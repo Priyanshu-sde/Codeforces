@@ -23,28 +23,32 @@ int main(){
 	    long long cnt2 = 0LL;
 	    for(int i =0;i < n;i++){
 	        cin>>p[i];
-	        if(p[i] = i + 1) cnt++;
+	        if(p[i] == i + 1) cnt++;
 	    }
 	    vector<bool> vis(n,false);
 	    for(int i = 0;i < n;i++){
 	        if(!vis[i]){
 	            int curr = i;
+                vis[curr] = true;
 	            while(p[curr] != i + 1 && !vis[curr] ){
 	                curr = p[curr] - 1;
 	                vis[curr] = true;
 	            }
-	            debug(i)
+                cnt2++;
+	            
 	        }
 	    }
 	    long long ans = 0LL;
 	    long long rem = n -cnt;
 	    long long rem2 = n -cnt2;
+        debug(t)
 	    for(int i =0;i < n;i++){
 	        long long ni = n-i;
-	        long long mdf =(rem2)*((ni)*(ni+1)/2 - (i*(i+1))/2);
-	        long long swp = (rem*(i*(i+1))/2 );
+	        long long mdf =(rem)*((ni)*(ni+1)/2 - ((i)*(i+1))/2);
+	        long long swp = (rem2*((i)*(i+1))/2 );
 
-            debug(rem2)
+            debug(mdf)
+            debug(swp)
 	        ans = (ans + mdf + swp);
 	    }
 	    cout<<ans<<endl;
