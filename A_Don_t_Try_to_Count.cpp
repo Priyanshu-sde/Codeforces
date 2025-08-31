@@ -8,6 +8,21 @@ using namespace std;
 int N = 10e7;
 #define all(a) a.begin(),a.end()
 
+bool check(string x, string s){
+    if(x.length() > s.length()) return false;
+    for(int i = 0;i < s.length() ;i++){
+        bool fl =  true;
+        for(int j = 0 ;j < x.length();j++){
+            if(x[i] != s[j]){
+                fl = false;
+                break;
+            }
+        }
+        if(!fl) return true;
+    }
+    return false;
+}
+
 int main(){
     int t = 1;
     cin>>t;
@@ -16,28 +31,14 @@ int main(){
         cin>>n>>m;
         string x,s;
         cin>>x>>s;
-        int j = 0,fl = 0,ans = -1;
-        for(int i = 0;i < n;i++){
-            if(s[j] == x[i]){
-                j++;
-                if(j == m){
-                    ans = fl;
-                    break;
-                }
-                else if(i == n-1){
-                    i = 0;
-                    fl++;
-                }
-            }
-            else{
-                if(fl > 0 || i == n-1) {
-                    ans = -1;
-                    break;
-                }
-                j = 0;
-            }
+        while (!check(x,s) && 3*(x.length()) >= s.length())
+        {
+            s += s;
         }
-        cout<<ans<<endl;
+        if(check(x,s))cout<<(s.length())/m<<endl;
+        else cout<<-1<<endl;
+
+        
     }
     return 0;
 }
