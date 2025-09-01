@@ -16,6 +16,6 @@ int main(){
     cin>>n;
     float a[n];
     fr(i,n) cin>>a[i];
-    int
+    
     return 0;
 }
