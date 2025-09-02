@@ -16,9 +16,13 @@ int main(){
         int n;
         cin>>n;
         vector<pair<int,int>> a(n);
-        fr(i,n)cin>>a[i].first;
         fr(i,n)cin>>a[i].second;
-        sort(all(a),[]())        
+        fr(i,n)cin>>a[i].first;
+        sr(a);
+        int ans = 0LL;
+        for(int i =  0; i< n;i++){
+            if(a[i].second <= )
+        }        
     }
     return 0;
 }

@@ -14,7 +14,7 @@ int main(){
     while(t--){
         int n;
         cin>>n;
-        ll gmi = LLONG_MAX,ans = 0LL;
+        ll gmi = LLONG_MAX,ans = 0LL,m2 =  0;
         for(int i = 0;i < n;i++){
             ll m;
             cin>>m;
@@ -23,9 +23,9 @@ int main(){
                 cin>>a[i];
             }
             sort(a.begin(),a.end());
-            ans += a[m-2];
-            gmi = min(gmi,a[m-1]); 
+            
         }
+
     }
     return 0;
 }
