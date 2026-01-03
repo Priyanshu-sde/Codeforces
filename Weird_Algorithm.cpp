@@ -5,7 +5,7 @@ using namespace std;
 #define ll long long
 
 int main(){
-    int n;
+    long long n;
     cin>>n;
     while(n != 1){
         cout<<n<<" ";
