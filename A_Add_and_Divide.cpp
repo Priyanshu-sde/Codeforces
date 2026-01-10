@@ -26,7 +26,7 @@ int main(){
     while(t--){
         int a,b;
         cin>>a>>b;
-        int mi = INT_MAX;
+        int mi = INT_MIN;
         while(hpow(a,b) > hpow(a,b+1) + 1){
             b++;
         }
