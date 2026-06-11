@@ -5,25 +5,13 @@ using namespace std;
 #define sr(a) sort(a.begin(),a.end())
 #define srd(a) sort(a.begin(),a.end(),greater<int>())
 #define ll long long
-int N = 10e7;
+const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
-bool check(string x, string s){
-    if(x.length() > s.length()) return false;
-    for(int i = 0;i < s.length() ;i++){
-        bool fl =  true;
-        for(int j = 0 ;j < x.length();j++){
-            if(x[i] != s[j]){
-                fl = false;
-                break;
-            }
-        }
-        if(!fl) return true;
-    }
-    return false;
-}
-
 int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     int t = 1;
     cin>>t;
     while(t--){
@@ -31,13 +19,30 @@ int main(){
         cin>>n>>m;
         string x,s;
         cin>>x>>s;
-        while (!check(x,s) && 3*(x.length()) >= s.length())
-        {
-            s += s;
+        int len = 0;
+        for(int i = 0;i < n;i++){
+            int j = 0;
+            while(j < m && x[i%n] == s[j]){
+                i++;
+                j++;      
+            }
+            if(j == m){
+                len = i;
+                break;
+            } else{
+                i -= j;
+            }
         }
-        if(check(x,s))cout<<(s.length())/m<<endl;
-        else cout<<-1<<endl;
-
+        if(len == 0) {
+            cout<<-1<<endl;
+            continue;
+        }
+        int ans = 0;
+        while(n < len){
+            ans++;
+            n *= 2;
+        }
+        cout<<ans<<endl;
         
     }
     return 0;

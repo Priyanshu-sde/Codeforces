@@ -18,14 +18,22 @@ int main(){
         for(int i = 0;i < n;i++){
             ll m;
             cin>>m;
-            ll a[m];
+            vector<ll> a(m);
             fr(i,m) {
                 cin>>a[i];
             }
             sort(a.begin(),a.end());
+            ans += a[0];
+            if(m > 1){
+                if(m2 < a[1] - a[0]){
+                    m2 = a[1] - a[0];
+                    cmi = a[0];
+                }
+            }
             
         }
-
+        if(n == 1) cout<<ans<<endl;
+        else cout<<ans+m2<<endl;
     }
     return 0;
 }

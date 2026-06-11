@@ -7,12 +7,12 @@ int main()
     while(t--){
         long long int n,k;
         cin>>n>>k;
-        bool flag = 0;
-        n = n%(k+2);
-        if(n%2 == 0 || n%k == 0)
-        cout<<"YES"<<endl;
-        else
-        cout<<"NO"<<endl;
+        n = n % k;
+        n = n%2;
+        if(n == 0 || k%2 == 1){
+            cout<<"YES"<<endl;
+        }
+        else cout<<"NO"<<endl;
     }
      return 0;
 }

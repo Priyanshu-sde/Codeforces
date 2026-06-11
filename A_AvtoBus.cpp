@@ -5,20 +5,24 @@ using namespace std;
 #define sr(a) sort(a.begin(),a.end())
 #define srd(a) sort(a.begin(),a.end(),greater<int>())
 #define ll long long
-int N = 10e7;
+const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     int t = 1;
     cin>>t;
     while(t--){
-        string s;
-        cin>>s;
-        for(int i = s.length() -1 ; i >= 0;i--){
-            if(!fl && (s[i] == '5' || s[i] == '0')){
-                fl = true;
-            }
+        ll n;
+        cin>>n;
+        if(n&1 || n < 4)cout<<-1<<endl;
+        else{
+            if(n > 6 && n%6 == 2) cout<<n/6 + (n%6)/2<<" "<<n/4<<endl;
+            else cout<<n/6 + (n%6)/4<<" "<<n/4<<endl;
         }
+
     }
     return 0;
 }

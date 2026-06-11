@@ -15,12 +15,10 @@ int main(){
         cin>>n;
         vector<ll> a(n);
         fr(i,n) cin>>a[i];
-        int add = 0;
-        cout<<add;
         fr(i,n){
-            a[i] += max((long long)0,a[i-1] - a[i]);
-            cout<<a[i]
+            cout<<n - a[i] + 1 <<" ";
         }
+        cout<<endl;
     }
     return 0;
 }

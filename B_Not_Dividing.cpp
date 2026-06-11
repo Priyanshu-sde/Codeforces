@@ -5,19 +5,31 @@ using namespace std;
 #define sr(a) sort(a.begin(),a.end())
 #define srd(a) sort(a.begin(),a.end(),greater<int>())
 #define ll long long
-int N = 10e7;
+const int N = 1e7;
 #define all(a) a.begin(),a.end()
 
 int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
     int t = 1;
     cin>>t;
     while(t--){
         int n;
         cin>>n;
         vector<ll> a(n);
-        fr(i,n) cin>>a[i];
-        if(!(n&1))cout<<2<<endl<<"1 "<<n<<endl<<"1 "<<n<<endl;
-        else cout<<4<<endl<<"1 "<<n-1<<endl<<"1 "<<n-1<<endl<<n-1<<" "<<n<<endl<<n-1<<" "<<n<<endl;
+        fr(i,n) {
+            cin>>a[i];
+            if(a[i] == 1) a[i]++;
+            if(i>0){
+                if(a[i]%a[i-1] == 0) a[i]++;
+            }
+        }
+        fr(i,n){
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+        
     }
     return 0;
 }

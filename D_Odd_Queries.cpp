@@ -25,7 +25,7 @@ int main(){
         while(q--){
             ll l,r,k;
             cin>>l>>r>>k;
-            if((a[n] - (a[r] - a[l-1]) + k*(r-l))&1){
+            if((a[n] - (a[r] - a[l-1]) + k*(r-l+1))&1){
                 cout<<"YES"<<endl;
             }
             else cout<<"NO"<<endl;

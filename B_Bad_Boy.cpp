@@ -14,6 +14,7 @@ int main(){
     while(tc--){
         int n,m,i,j;
         cin>>n>>m>>i>>j;
+        cout<<1<<" "<<1<<" "<<n<<" "<<m<<endl;
         
     }
 }

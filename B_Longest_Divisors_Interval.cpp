@@ -14,11 +14,13 @@ int main(){
     while(tc--){
         ll n;
         cin>>n;
-        if(n%2){
-            cout<<1<<endl;
-        }
-        else{
-            
+        if(n == 1) cout<<1<<endl;
+        if(n == 2) cout<<2<<endl;
+        for(int i = 1;i< n;i++){
+            if(n%i != 0){
+                cout<<i-1<<endl;
+                break;
+            }
         }
     }
 }
